@@ -1,0 +1,38 @@
+
+
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+<div class="container">
+    <h2>Bejelentkezés szerkesztésre</h2>
+    <%- include('errorbox') %>
+    <form class="form-horizontal" method="POST">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="user">Felhasználó:</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="email" placeholder="Felhasználó" name="email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Jelszó:</label>
+            <div class="col-sm-3">
+                <input type="password" class="form-control" id="password" placeholder="Jelszó" name="password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-3">
+                <div class="checkbox">
+                    <label><input type="checkbox" name="remember"> Emlékezz rám</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-3">
+                <input type="submit" class="btn" value="Bejelentkezés" >
+            </div>
+        </div>
+    </form>
+	<p>Ha lefuttatod a createdatas.js, akkor az adatbázist feltölti és az user: asd@asd.asd pw: asd -vel be tudsz lépni.</p>
+</div>
+
+<%- include('footer') -%>

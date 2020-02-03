@@ -1,0 +1,53 @@
+
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+
+<div class="container">
+    <h2>Összefoglaló</h2>
+    <p>Itt találhatóak a helyszínek és a foglaltságuk összefoglalva ADMIN</p>
+    <form>
+        <select id='mySelect'>
+            <option value='0'>Hétfő</option>
+            <option value='1'>Kedd</option>
+            <option value='2'>Szerda</option>
+            <option value='3'>Csütörtök</option>
+            <option value='4'>Péntek</option>
+            <option value='5'>Szombat</option>
+            <option value='6'>Vasárnap</option>
+        </select>
+    </form>
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active" style="pointer-events: none; cursor: default;" ><a href="#hetfo">Hétfő</a></li>
+        <li><a href="#kedd" style="pointer-events: none; cursor: default;">Kedd</a></li>
+        <li><a href="#szerda" style="pointer-events: none; cursor: default;">Szerda</a></li>
+        <li><a href="#csutortok" style="pointer-events: none; cursor: default;">Csütörtök</a></li>
+        <li><a href="#pentek" style="pointer-events: none; cursor: default;">Péntek</a></li>
+        <li><a href="#szombat" style="pointer-events: none; cursor: default;">Szombat</a></li>
+        <li><a href="#vasarnap" style="pointer-events: none; cursor: default;">Vasárnap</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="hetfo">Táblázat hétfői:</div>
+        <div class="tab-pane" id="kedd">Táblázat keddi:</div>
+        <div class="tab-pane" id="szerda">Táblázat szerdai:</div>
+        <div class="tab-pane" id="csutortok">Táblázat csütörtöki</div>
+        <div class="tab-pane" id="pentek">Táblázat pénteki:</div>
+        <div class="tab-pane" id="szombat">Táblázat szombati:</div>
+        <div class="tab-pane" id="vasarnap">Táblázat vasárnapi:</div>
+    </div>
+</div>
+
+
+<%- include('footer') -%>
+
+
+<script>
+    $('#mySelect').on('change', function (e) {
+        $('#myTab li a').eq($(this).val()).tab('show');
+    });
+
+    $('#myTab').on('change', function (e) {
+        $('#myTab li a').eq($(this).val()).tab('show');
+    });
+
+</script>
