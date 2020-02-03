@@ -1,0 +1,50 @@
+
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+<div class="container" >
+    <h2>Felhasználókhoz rendelt kulcsok szerkesztése</h2>
+    <form class="form-horizontal"   method="POST">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Név:</label>
+            <div class="col-sm-3">
+                <!--<input type="text" class="form-control" id="user" placeholder="Név" name="user">-->
+
+                <select name="user" id="user" required>
+                    <option value="">--Válassz egyet--</option>
+                    <% users.forEach(function(users){ %>
+                    <option value="<%=users.name%>"><%=users.name%></option>
+                    <% }); %>
+
+                </select>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="door">Ajtó:</label>
+            <div class="col-sm-3">
+                <!--<input type="text" class="form-control" id="door" placeholder="Ajtó" name="door">-->
+
+                <select name="door" id="door" required>
+                    <option value="">--Válassz egyet--</option>
+                    <% doorsandkeys.forEach(function(doorsandkeys){ %>
+                    <option value="<%=doorsandkeys.door%>"><%=doorsandkeys.door%></option>
+                    <% }); %>
+
+                </select>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-3">
+                <input type="submit" class="btn" value="Küldés">
+                <input type="button" class="btn" value="Mégsem" onclick="location.href = '/logins/usersandkeys';">
+            </div>
+        </div>
+    </form>
+
+
+</div>
+
+<%- include('footer') -%>
+

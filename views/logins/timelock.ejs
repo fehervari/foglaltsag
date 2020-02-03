@@ -1,0 +1,42 @@
+
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+<div class="container">
+    <h2>Használati tábla</h2>
+    <p>Melyik felhasználó melyik zónát mikor használja</p>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Felhasználó</th>
+            <th>Helyszín</th>
+            <th>Időtartam kezdete</th>
+            <th>Időtartam vége</th>
+            <th>Esemény</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+
+            <% timelocks.forEach(function(timelocks){ %>
+        <tr>
+            <td><%=timelocks.user%></td>
+            <td><%=timelocks.place%></td>
+            <td><%=timelocks.timestart%></td>
+            <td><%=timelocks.timeend%></td>
+            <td><%=timelocks.event%></td>
+            <td><button type="button" class="btn" onclick="location.href='/logins/timelock/del?id=<%=timelocks._id%>';" >Törlés</button>
+                <input type="button" class="btn" value="Módosítás" onclick="location.href = '/logins/timelock/edit?id=<%= timelocks._id %>'; " ></td>
+
+        <% }); %>
+        </tr>
+        </tbody>
+    </table>
+    <input type="button" class="btn" value="Új felvétele" onclick="location.href = '/logins/timelock/add';">
+
+</div>
+
+<%- include('footer') -%>
+

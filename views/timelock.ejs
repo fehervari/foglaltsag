@@ -1,0 +1,40 @@
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+<div class="container">
+    <h2>Használati tábla</h2>
+    <p>Melyik felhasználó melyik zónát mikor használja</p>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Felhasználó</th>
+            <th>Helyszín</th>
+            <th>Időtartam kezdete</th>
+            <th>Időtartam vége</th>
+            <th>Esemény</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--
+        <tr>
+            <td>Pista</td>
+            <td>Ebédlő</td>
+            <td>12:00</td>
+            <td>13:00</td>
+            <td>Buli</td>
+        </tr>-->
+        <% timelocks.forEach(function(timelocks){ %>
+        <tr>
+            <td><%=timelocks.user%></td>
+            <td><%=timelocks.place%></td>
+            <td><%=timelocks.timestart%></td>
+            <td><%=timelocks.timeend%></td>
+            <td><%=timelocks.event%></td>
+        </tr>
+
+        <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('footer') -%>

@@ -1,0 +1,33 @@
+get / főoldal
+get /index
+get /sum/:id
+get /doorsandkeys
+get /timelock
+get /usersandkeys
+get /users
+get + post /login
+get /nologin
+
+get /login/index
+get /login/sum/:id
+get + post /login/doorsandkeys/add
+get /login/doorsandkeys/del/:id
+get + post /login/doorsandkeys/mod/:id
+get /login/doorsandkeys -
+
+get + post /login/timelock/add
+get /login/timelock/del/:id
+get + post /login/timelock/mod/:id
+get /login/timelock -
+
+get + post /login/users/add
+get /login/users/del/:id
+get + post /login/users/mod/:id
+get /login/users -
+
+get + post /login/usersandkeys/add
+get /login/usersandkeys/del/:id
+get + post /login/usersandkeys/mod/:id
+get /login/usersandkeys -
+
+get /login/logout/
