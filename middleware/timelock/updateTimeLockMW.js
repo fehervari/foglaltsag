@@ -31,7 +31,7 @@ module.exports = function (objectrepository) {
             res.tpl.timelocks = k;
 
             res.redirect('/logins/timelock');
-            return next();
+            //return next();
         });
     };
 };

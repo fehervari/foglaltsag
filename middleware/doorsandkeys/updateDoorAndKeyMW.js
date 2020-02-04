@@ -30,11 +30,13 @@ module.exports = function (objectrepository) {
             if (err) {
                 return next(err);
             }
+            else {
             console.log("Felvéve: " + k.place);
             res.tpl.doorsandkeys = k;
 
             res.redirect('/logins/doorsandkeys');
-            return next();
+            //return next();
+            }
         });
     };
 };

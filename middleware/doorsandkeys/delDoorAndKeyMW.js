@@ -19,6 +19,6 @@ module.exports = function (objectrepository) {
 
         console.log("Törölve: " + res.tpl.doorsandkeys.place);
         res.tpl.doorsandkeys.remove(next);
-        return next();
+        //return next();
     };
 };

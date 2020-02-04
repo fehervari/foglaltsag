@@ -33,7 +33,7 @@ module.exports = function (objectrepository) {
             res.tpl.userandkey = k;
 
             res.redirect('/logins/usersandkeys');
-            return next();
+            //return next();
         });
     };
 };

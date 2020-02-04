@@ -17,7 +17,7 @@ module.exports = function (objectrepository) {
 
         console.log("Törölve: " + res.tpl.timelocks.user);
         res.tpl.timelocks.remove(next);
-        return next();
+        //return next();
     };
 
 };

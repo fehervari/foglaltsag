@@ -18,6 +18,5 @@ module.exports = function (objectrepository) {
 
         console.log("Törölve: " + res.tpl.users.name);
         res.tpl.users.remove(next);
-        return next();
     };
 };

@@ -34,7 +34,7 @@ module.exports = function (objectrepository) {
             res.tpl.users = k;
 
             res.redirect('/logins/users');
-            return next();
+
         });
     };
 };

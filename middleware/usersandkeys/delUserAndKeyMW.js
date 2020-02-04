@@ -14,7 +14,7 @@ module.exports = function (objectrepository) {
 
         console.log("Törölve: " + res.tpl.userandkey.user);
         res.tpl.userandkey.remove(next);
-        return next();
+        //return next();
     };
 
 };
