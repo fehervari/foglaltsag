@@ -49,3 +49,4 @@ var server = app.listen(3000, function () {
     console.log("A szerver elindult");
     console.log("A port: 3000");
 });
+
