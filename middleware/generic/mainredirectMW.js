@@ -9,7 +9,8 @@ module.exports = function (objectrepository) {
     return function (req, res, next) {
 
         if (typeof req.session.userid === 'undefined') {
-            console.log(req.session.userid);
+            console.log(req.session.userid + " No userId, because not logged in!");
+            console.log();
             return res.redirect('/index');
         } else {
             console.log(req.session.userid);

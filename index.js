@@ -3,6 +3,8 @@ var app = express();
 app.use(express.static('static'));
 var session = require('express-session');
 
+var settings = require("./config/conf.json");
+
 
 app.set('view engine', 'ejs');
 //app.use(express.static('static'));
@@ -45,9 +47,10 @@ app.use(function (err, req, res, next) {
     res.end('Check console.log');
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(settings.confs.port, function () {
     console.log("A szerver elindult");
-    console.log("A port: 3000");
+    console.log("A port: " + settings.confs.port);
+    console.log()
 });
 
 

@@ -1,0 +1,6 @@
+{
+    "confs":{
+        "debug_level": 10,
+        "port": 3000
+    }
+}

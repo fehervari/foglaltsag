@@ -26,31 +26,32 @@ module.exports = function (app) {
      * Login page
      */
 
+    
+    app.use('/nologin',
+    renderMW(objectRepository, 'nologin')
+    );
+    
+    /**
+     * Main page
+     */
+    app.use('/logins/logout',
+    logoutMW(objectRepository),
+    function(req, res, next) {
+        res.redirect('/');
+    }
+    );
+    
+    app.use('/index',
+    renderMW(objectRepository, 'index')
+    );
+    
     app.use('/login',
         inverseAuthMW(objectRepository),
         checkUserLoginMW(objectRepository),
         renderMW(objectRepository, 'login')
     );
-
-    app.use('/nologin',
-        renderMW(objectRepository, 'nologin')
-    );
-
-    /**
-     * Main page
-     */
-    app.use('/logins/logout',
-        logoutMW(objectRepository),
-        function(req, res, next) {
-            res.redirect('/');
-        }
-    );
-
-    app.use('/index',
-        renderMW(objectRepository, 'index')
-    );
-
+    
     app.use('/',
-        mainRedirectMW(objectRepository)
+    mainRedirectMW(objectRepository)
     );
 };
