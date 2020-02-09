@@ -6,6 +6,23 @@ var session = require('express-session');
 var settings = require("./config/conf.json");
 
 
+var log = require('loglevel');
+
+//log.disableAll()
+//log.enableAll()
+log.disableAll();
+
+log.setLevel("debug") ;
+
+log.trace("trace");
+log.debug("debug");
+log.info("info");
+log.warn("warn");
+log.error("error");
+
+console.log("");
+console.log("");
+
 app.set('view engine', 'ejs');
 //app.use(express.static('static'));
 

@@ -11,7 +11,6 @@ var settings = require("../config/conf.json");
 // })
 
 console.log("debug level is:", settings.confs.debug_level);
-console.group(settings, {colors: true, depth: 0 } )
 
 /**
  * Load a dependency from an object repository
@@ -27,3 +26,4 @@ function requireOption(objectRepository, propertyName) {
 }
 
 module.exports.requireOption = requireOption;
+
