@@ -18,7 +18,6 @@ module.exports = function (objectrepository) {
             }
             console.log(user);
             res.tpl.users = user;
-            return next();
         });
     };
 };
