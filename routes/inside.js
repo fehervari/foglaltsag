@@ -7,6 +7,9 @@ var authMW = require('../middleware/generic/authMW');
 var logoutMW = require('../middleware/generic/logoutMW');
 var userloginModel = require('../models/userlogin');
 
+var log = require('loglevel');
+
+
 module.exports = function (app) {
 
     var objectRepository = {
@@ -40,12 +43,12 @@ module.exports = function (app) {
             res.redirect('/');
         }
     );
-
+/*
     app.use('/logins/index',
         authMW(objectRepository),
         renderMW(objectRepository, 'logins/index')
 
-    );
+    );*/
 
     app.use('/logins',
         authMW(objectRepository),

@@ -10,7 +10,7 @@ var settings = require("../config/conf.json");
 //   return configs;
 // })
 
-console.log("debug level is:", settings.confs.debug_level);
+//console.log("debug level is:", settings.confs.debug_level);
 
 /**
  * Load a dependency from an object repository

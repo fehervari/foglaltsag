@@ -32,8 +32,6 @@ module.exports = function (app) {
 
     };
 
-
-
     app.use('/logins/timelock/add',
         authMW(objectRepository),
         getDoorAndKeyMW(objectRepository),

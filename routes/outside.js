@@ -52,6 +52,7 @@ module.exports = function (app) {
     );
     
     app.use('/',
+    //renderMW(objectRepository, 'index'),
     mainRedirectMW(objectRepository)
     );
 };

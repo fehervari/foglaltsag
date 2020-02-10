@@ -21,7 +21,6 @@ log.warn("warn");
 log.error("error");
 
 console.log("");
-console.log("");
 
 app.set('view engine', 'ejs');
 //app.use(express.static('static'));
@@ -69,7 +68,7 @@ var server = app.listen(settings.confs.port, function () {
     console.log("A port: " + settings.confs.port);
     console.log()
 });
-
+//console.log(server);
 
 'use strict';
 

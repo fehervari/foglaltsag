@@ -4,16 +4,19 @@
  *    - /login.html when not signed in
  *    - /logins/ when signed in
  */
+var log = require('loglevel');
+
+
+
 module.exports = function (objectrepository) {
 
     return function (req, res, next) {
 
         if (typeof req.session.userid === 'undefined') {
-            console.log(req.session.userid + " No userId, because not logged in!");
-            console.log();
+            log.debug(req.session.userid + " No userId, because not logged in!");
             return res.redirect('/index');
         } else {
-            console.log(req.session.userid);
+            log.debug("Logged in UserId: " + req.session.userid);
             return res.redirect('/logins/index');
         }
     };
