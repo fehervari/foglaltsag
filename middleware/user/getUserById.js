@@ -1,4 +1,5 @@
 var requireOption = require('../common').requireOption;
+var log = require('loglevel');
 
 /**
  * Load a user (if exists) with the :userid param
@@ -6,21 +7,22 @@ var requireOption = require('../common').requireOption;
  */
 module.exports = function (objectrepository) {
 
-  var userModel = requireOption(objectrepository, 'userModel');
+  var userModel = requireOption(objectrepository, 'userloginModel');
 
   return function (req, res, next) {
     //not enought parameter
-    if ((typeof req.param('userid') === 'undefined') || (req.param('userid') === 'null')) {
+    if ((typeof req.params === 'undefined') || (req.params === 'null')) {
       return next();
     }
 
     //lets find the user
-    userModel.findOne({_id: req.param('userid')}, function (err, result) {
+    userModel.findOne({_id: req.session.userid}, function (err, result) {
+      log.debug(result);
       if (err) {
         return next(err);
       }
 
-      res.tpl.user = result;
+      res.tpl.userlogin = result;
 
       return next();
     });

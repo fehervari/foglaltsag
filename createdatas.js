@@ -36,4 +36,6 @@ var User = new userloginModel();
 User.name = "asd";
 User.email = "asd@asd.asd";
 User.password = "asd";
+User.level = "1";
 User.save();
+

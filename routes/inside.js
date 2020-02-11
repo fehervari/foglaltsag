@@ -5,7 +5,11 @@ var inverseAuthMW = require('../middleware/generic/inverseAuthMW');
 var renderMW = require('../middleware/generic/renderMW');
 var authMW = require('../middleware/generic/authMW');
 var logoutMW = require('../middleware/generic/logoutMW');
+
+
 var userloginModel = require('../models/userlogin');
+
+var getUserLoginModelMW = require('../middleware/user/getUserById');
 
 var log = require('loglevel');
 
@@ -27,8 +31,10 @@ module.exports = function (app) {
 
     app.use('/logins/index',
         authMW(objectRepository),
-        renderMW(objectRepository, './logins/index')
-    );
+        getUserLoginModelMW(objectRepository),
+        renderMW(objectRepository, './logins/index'),
+        //renderMW(objectRepository, './logins/navbar')
+        );
 
     /**
      * Sum page
