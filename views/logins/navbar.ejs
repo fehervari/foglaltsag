@@ -3,7 +3,12 @@
         <div class="navbar-header">
             <a class="navbar-brand active" href="/logins/index">Foglaltság és kulcs nyilvántartó</a>
         </div>
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav">    <% if(userlogin.level == 1){ %>
+            <li id="adduser"><a href="/logins/adduser">Felhasználó hozzáadása </a></li>
+          <% } else{ %>  
+            
+         <% } %>
+
             <!--<li class="active"><a href="./index.html">Kezdőoldal</a></li>-->
             <li id="sum" style="display: none"><a href="/logins/sum">Összegző</a></li>
             <li id="users"><a href="/logins/users">Felhasználók</a></li>
