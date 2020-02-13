@@ -7,7 +7,7 @@ var log = require('loglevel');
  */
 module.exports = function (objectrepository) {
 
-  var userModel = requireOption(objectrepository, 'userloginModel');
+  var userModel = requireOption(objectrepository, 'userModel');
 
   return function (req, res, next) {
     //not enought parameter
@@ -17,12 +17,12 @@ module.exports = function (objectrepository) {
 
     //lets find the user
     userModel.findOne({_id: req.session.userid}, function (err, result) {
-      log.debug(result);
+      //log.debug(result);
       if (err) {
         return next(err);
       }
 
-      res.tpl.userlogin = result;
+      res.tpl.user = result;
 
       return next();
     });

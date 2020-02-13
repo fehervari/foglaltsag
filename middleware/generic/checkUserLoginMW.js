@@ -4,7 +4,7 @@ var requireOption = require('../common').requireOption;
 
 module.exports = function (objectrepository) {
 
-    var userloginModel = requireOption(objectrepository, 'userloginModel');
+    var userModel = requireOption(objectrepository, 'userModel');
 
     return function (req, res, next) {
         //not enough parameter
@@ -14,7 +14,7 @@ module.exports = function (objectrepository) {
         }
 
         //lets find the user
-        userloginModel.findOne({
+        userModel.findOne({
             email: req.body.email
         }, function (err, result) {
             if ((err) || (!result)) {
@@ -32,7 +32,7 @@ module.exports = function (objectrepository) {
             req.session.userid = result._id;
 
             //redirect to / so the app can decide where to go next
-            return res.redirect('/logins');
+            return res.redirect('/logined');
         });
     };
 

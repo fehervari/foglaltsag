@@ -32,8 +32,8 @@ module.exports = function (objectrepository) {
       newUser.email = req.body.email;
       newUser.password = req.body.password;
       newUser.save(function (err) {
-        //redirect to /logins
-        return res.redirect('/logins');
+        //redirect to /logined
+        return res.redirect('/logined');
       });
     });
   };

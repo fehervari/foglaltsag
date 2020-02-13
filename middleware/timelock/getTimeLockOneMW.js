@@ -16,7 +16,7 @@ module.exports = function (objectrepository) {
                 return res.redirect('/');
             }
             console.log(result);
-            res.tpl.timelocks = result;
+            res.tpl.timelock = result;
             return next();
         });
     };

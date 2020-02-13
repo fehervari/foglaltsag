@@ -1,0 +1,37 @@
+
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+
+<div class="container">
+    <h2>Ajtók és kulcsok szerkesztése</h2>
+    <form class="form-horizontal"   method="POST">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="place">Hely:</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="place" placeholder="Hely" name="place" value="<%= doorandkey.place %>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="door">Ajtó:</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="door" placeholder="Ajtó" name="door" value="<%= doorandkey.door %>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="numberofkeys">Kulcsok száma:</label>
+            <div class="col-sm-3">
+                <input type="number" class="form-control" id="numberofkeys" placeholder="Kulcsok száma" name="keynum" value="<%= doorandkey.keynum %>">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-3">
+                <input type="submit" class="btn" value="Küldés" >
+                <input type="button" class="btn" value="Mégsem" onclick="location.href = '/logined/doorandkey';">
+            </div>
+        </div>
+    </form>
+
+</div>
+<%- include('footer') -%>
+

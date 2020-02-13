@@ -46,9 +46,9 @@ app.use(session({
     saveUninitialized: false
 }));
 
-require('./routes/usersandkeys')(app);
-require('./routes/users')(app);
-require('./routes/doorsandkeys')(app);
+require('./routes/memberandkey')(app);
+require('./routes/member')(app);
+require('./routes/doorandkey')(app);
 require('./routes/timelock')(app);
 
 require('./routes/inside')(app);

@@ -7,9 +7,9 @@ var authMW = require('../middleware/generic/authMW');
 var logoutMW = require('../middleware/generic/logoutMW');
 
 
-var userloginModel = require('../models/userlogin');
+var userModel = require('../models/user');
 
-var getUserLoginModelMW = require('../middleware/user/getUserById');
+var getUserModelMW = require('../middleware/user/getUserById');
 
 var log = require('loglevel');
 
@@ -17,23 +17,23 @@ var log = require('loglevel');
 module.exports = function (app) {
 
     var objectRepository = {
-        userloginModel: userloginModel
+        userModel: userModel
     };
 
     /**
      * Main page
      */
 
-    app.use('/logins/sum',
+    app.use('/logined/sum',
         authMW(objectRepository),
-        renderMW(objectRepository, './logins/sum')
+        renderMW(objectRepository, './logined/sum')
     );
 
-    app.use('/logins/index',
+    app.use('/logined/index',
         authMW(objectRepository),
-        getUserLoginModelMW(objectRepository),
-        renderMW(objectRepository, './logins/index'),
-        //renderMW(objectRepository, './logins/navbar')
+        getUserModelMW(objectRepository),
+        renderMW(objectRepository, './logined/index'),
+        //renderMW(objectRepository, './logined/navbar')
         );
 
     /**
@@ -43,21 +43,22 @@ module.exports = function (app) {
     /**
      * Main page
      */
-    app.get('/logins/logout',
+    app.get('/logined/logout',
         logoutMW(objectRepository),
         function(req, res, next) {
             res.redirect('/');
         }
     );
 /*
-    app.use('/logins/index',
+    app.use('/logined/index',
         authMW(objectRepository),
-        renderMW(objectRepository, 'logins/index')
+        renderMW(objectRepository, 'logined/index')
 
     );*/
 
-    app.use('/logins',
+    app.use('/logined',
         authMW(objectRepository),
+        getUserModelMW(objectRepository),
         mainRedirectMW(objectRepository)
     );
 

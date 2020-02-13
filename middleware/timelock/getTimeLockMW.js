@@ -17,7 +17,7 @@ module.exports = function (objectrepository) {
 
                 return next(err);
             }
-            res.tpl.timelocks = result;
+            res.tpl.timelock = result;
             return next();
         });
     };

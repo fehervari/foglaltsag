@@ -17,7 +17,7 @@ module.exports = function (objectrepository) {
             return res.redirect('/index');
         } else {
             log.debug("Logged in UserId: " + req.session.userid);
-            return res.redirect('/logins/index');
+            return res.redirect('/logined/index');
         }
     };
 };

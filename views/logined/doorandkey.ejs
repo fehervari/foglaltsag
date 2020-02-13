@@ -1,0 +1,54 @@
+
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+
+<div class="container">
+    <h2>Ajtók és a kulcsok</h2>
+    <p>Milyen ajtók találhatóak és milyen kulcsok tartoznak hozzájuk</p>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Hely</th>
+            <th>Ajtó</th>
+            <th>Kulcsszám</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <% doorandkey.forEach(function(doorandkey){ %>
+        <!--
+        <tr>
+            <td>Kert</td>
+            <td>Kapu</td>
+            <td>1</td>
+            <td><button type="button" class="btn">Törlés</button>
+                <input type="button" class="btn" value="Módosítás" onclick="location.href = 'doorandkeyedit.html';"></td>
+        </tr>-->
+
+        <tr>
+            <td><%=doorandkey.place%></td>
+            <td><%=doorandkey.door%></td>
+            <td><%=doorandkey.keynum%></td>
+            <td>
+                <button type="button" class="btn"  onclick="location.href='/logined/doorandkey/del?id=<%=doorandkey._id%>';" >Törlés</button>
+                <input type="button" class="btn" value="Módosítás" onclick="location.href = '/logined/doorandkey/edit?id=<%= doorandkey._id %>'; " >
+            </td>
+
+            <!--
+            <td>
+                <a href="/kalapacs?id=<%=doorandkey._id%>">Megnez</a>
+                <a href="/modkalapacs?id=<%=doorandkey._id%>">Modosit</a>
+                <a href="/del?id=<%=doorandkey._id%>">Torol</a>
+            </td>-->
+        </tr>
+
+        <% }); %>
+        </tbody>
+    </table>
+    <input type="button" class="btn" value="Új felvétele" onclick="location.href = '/logined/doorandkey/add';">
+</div>
+
+<%- include('footer') -%>
+

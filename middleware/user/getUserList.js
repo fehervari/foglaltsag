@@ -16,7 +16,7 @@ module.exports = function (objectrepository) {
         return next(err);
       }
 
-      res.tpl.users = results;
+      res.tpl.user = results;
 
       return next();
     });

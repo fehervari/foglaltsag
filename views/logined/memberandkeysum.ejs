@@ -1,0 +1,39 @@
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+<div class="container">
+    <h2>Felhasználók és kulcsaik összesítve</h2>
+    <p>Melyik felhasználónak hova van kulcsa:</p>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Felhasználó</th>
+            <th>Ajtókulcs</th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+        <% memberandkey.forEach(function(memberandkey){ %>
+        <tr>
+            <td><%=memberandkey.member%></td>
+            <td><%=memberandkey.door%></td>
+        </tr>
+
+        <% }); %>
+
+        <!--
+        <tr>
+            <td>Jocó</td>
+            <td>Konyha ajtó</td>
+        </tr>
+        <tr>
+            <td>Pista</td>
+            <td>Ebédlő ajtó</td>
+        </tr>
+        -->
+        </tbody>
+    </table>
+</div>
+
+<%- include('footer') -%>

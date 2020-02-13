@@ -1,0 +1,19 @@
+
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+<div class="container">
+    <h2>Kezdőoldal</h2>
+    <p>Itt található az intézmény kulcs nyilvántartó és foglaltságjelző felülete. Ha van jogod, módosíthatod az értékeket.</p>
+    <h1 style="color: #F00;">Most már módosíthatod a cellákat</h1>
+    <%=user.name%>
+    <br>
+    <%=user.level%>
+
+
+    <!--% if(userlogin.level > 1) { %>  <% <!--li id="adduser"><a href="/logins/adduser">Felhasználó hozzáadása </a></li-->} %>
+
+</div>
+
+<%- include('footer') -%>
+

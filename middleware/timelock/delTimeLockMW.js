@@ -9,14 +9,14 @@ module.exports = function (objectrepository) {
 
 
     return function (req, res, next) {
-        if (typeof res.tpl.timelocks === 'undefined') {
-            console.log("ID: " + res.tpl.timelocks._id);
+        if (typeof res.tpl.timelock === 'undefined') {
+            console.log("ID: " + res.tpl.timelock._id);
             console.log("ajjaj");
             return next();
         }
 
-        console.log("Törölve: " + res.tpl.timelocks.user);
-        res.tpl.timelocks.remove(next);
+        console.log("Törölve: " + res.tpl.timelock.member);
+        res.tpl.timelock.remove(next);
         //return next();
     };
 

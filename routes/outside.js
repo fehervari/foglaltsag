@@ -5,13 +5,13 @@ var checkUserLoginMW = require('../middleware/generic/checkUserLoginMW');
 var renderMW = require('../middleware/generic/renderMW');
 var logoutMW = require('../middleware/generic/logoutMW');
 
-var userloginModel = require('../models/userlogin');
+var userModel = require('../models/user');
 
 
 module.exports = function (app) {
 
     var objectRepository = {
-        userloginModel: userloginModel
+        userModel: userModel
     };
 
     /**
@@ -34,7 +34,7 @@ module.exports = function (app) {
     /**
      * Main page
      */
-    app.use('/logins/logout',
+    app.use('/logined/logout',
     logoutMW(objectRepository),
     function(req, res, next) {
         res.redirect('/index');

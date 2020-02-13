@@ -10,7 +10,7 @@ module.exports = function (objectrepository) {
     return function (req, res, next) {
         if (typeof req.session.userid !== 'undefined') {
             log.debug("Jártam itt.");
-            return res.redirect('/logins');
+            return res.redirect('/logined');
         }
         return next();
     };

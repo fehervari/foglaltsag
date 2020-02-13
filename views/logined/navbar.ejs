@@ -1,0 +1,24 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand active" href="/logined/index">Foglaltság és kulcs nyilvántartó</a>
+        </div>
+        <ul class="nav navbar-nav">    <% if(user.level == 1){ %>
+            <li id="adduser"><a href="/logined/adduser">Felhasználó hozzáadása </a></li>
+          <% } else{ %>  
+            
+         <% } %>
+
+            <!--<li class="active"><a href="./index.html">Kezdőoldal</a></li>-->
+            <li id="sum" style="display: none"><a href="/logined/sum">Összegző</a></li>
+            <li id="users"><a href="/logined/member">Felhasználók</a></li>
+            <li id="doorsandkeys"><a href="/logined/doorandkey">Ajtók és kulcsok</a></li>
+            <li id="usersandkeys"><a href="/logined/memberandkey">Felhasználókhoz rendelt kulcsok</a></li>
+            <li id="usersandkeyssum"><a href="/logined/memberandkeysum">FRKS</a></li>
+            <li id="timelock"><a href="/logined/timelock">Foglaltság beállítása</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/logined/logout"><span class="glyphicon glyphicon-log-out"></span> Kijelentkezés</a></li>
+        </ul>
+    </div>
+</nav>

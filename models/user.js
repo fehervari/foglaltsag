@@ -1,11 +1,12 @@
 var Schema = require('mongoose').Schema;
 var db = require('../config/db');
 
-var Users = db.model('users', {
-    name: String,
-    phone: String,
-    email: String
+var User = db.model('user', {
+  name: String,
+  email: String,
+  password: String,
+  level: Number
+  
 });
 
-module.exports = Users;
-
+module.exports = User;

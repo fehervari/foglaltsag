@@ -1,10 +1,10 @@
+
 <%- include('header') -%>
 <%- include('navbar') -%>
 
 <div class="container">
     <h2>Használati tábla</h2>
     <p>Melyik felhasználó melyik zónát mikor használja</p>
-    <%- include('errorbox') %>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -13,29 +13,30 @@
             <th>Időtartam kezdete</th>
             <th>Időtartam vége</th>
             <th>Esemény</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
-        <!--
-        <tr>
-            <td>Pista</td>
-            <td>Ebédlő</td>
-            <td>12:00</td>
-            <td>13:00</td>
-            <td>Buli</td>
-        </tr>-->
-        <% timelock.forEach(function(timelock){ %>
+
+
+
+            <% timelock.forEach(function(timelock){ %>
         <tr>
             <td><%=timelock.member%></td>
             <td><%=timelock.place%></td>
             <td><%=timelock.timestart%></td>
             <td><%=timelock.timeend%></td>
             <td><%=timelock.event%></td>
-        </tr>
+            <td><button type="button" class="btn" onclick="location.href='/logined/timelock/del?id=<%=timelock._id%>';" >Törlés</button>
+                <input type="button" class="btn" value="Módosítás" onclick="location.href = '/logined/timelock/edit?id=<%= timelock._id %>'; " ></td>
 
         <% }); %>
+        </tr>
         </tbody>
     </table>
+    <input type="button" class="btn" value="Új felvétele" onclick="location.href = '/logined/timelock/add';">
+
 </div>
 
 <%- include('footer') -%>
+

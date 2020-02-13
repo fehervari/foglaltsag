@@ -1,0 +1,48 @@
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+
+<div class="container">
+    <h2>Felhasználók</h2>
+    <p>Milyen felhasználók vannak:</p>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Név</th>
+            <th>Telefonszám</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <% member.forEach(function(member){ %>
+        <tr>
+            <td><%=member.name%></td>
+            <td><%=member.phone%></td>
+            <td><%=member.email%></td>
+        </tr>
+
+        <% }); %>
+
+
+        <!--
+        <tr>
+            <td>Pista</td>
+            <td>0101</td>
+            <td>pista@me.me</td>
+        </tr>
+        <tr>
+            <td>Jocó</td>
+            <td>0202</td>
+            <td>jocó@me.me</td>
+        </tr>
+        <tr>
+            <td>Főni</td>
+            <td>0303</td>
+            <td>foni@me.me</td>
+        </tr>-->
+        </tbody>
+    </table>
+</div>
+
+<%- include('footer') -%>
