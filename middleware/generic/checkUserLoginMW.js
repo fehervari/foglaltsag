@@ -32,6 +32,7 @@ module.exports = function (objectrepository) {
             req.session.userid = result._id;
 
             //redirect to / so the app can decide where to go next
+            res.tpl.sessionid = result._id;
             return res.redirect('/logined');
         });
     };

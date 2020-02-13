@@ -33,6 +33,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(function (req, res, next) {
     res.tpl = {};
     res.tpl.error = [];
+    res.tpl.sessionid = [];
     //console.log("tpl létrehozva");
     return next();
 });

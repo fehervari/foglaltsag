@@ -4,6 +4,7 @@ var inverseAuthMW = require('../middleware/generic/inverseAuthMW');
 var checkUserLoginMW = require('../middleware/generic/checkUserLoginMW');
 var renderMW = require('../middleware/generic/renderMW');
 var logoutMW = require('../middleware/generic/logoutMW');
+var sessionMW = require('../middleware/generic/getSessionIdMW');
 
 var userModel = require('../models/user');
 
@@ -42,6 +43,7 @@ module.exports = function (app) {
     );
     
     app.use('/index',
+    sessionMW(objectRepository),
     renderMW(objectRepository, 'index')
     );
     

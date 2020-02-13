@@ -1,0 +1,3 @@
+Név és ajtó módosításkor minden változtatás.
+Navbar és logined oldalak egyesítése
+FRKS oldal megcsinálása
